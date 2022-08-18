@@ -55,7 +55,7 @@ const Login = () => {
                       name="username"
                       value={values.username}
                       onChange={handleChange}
-                      isInvalid={values.username && errors.username}
+                      isInvalid={errors.username}
                       isValid={values.username && !errors.username}
                     />
                     <Form.Control.Feedback type="invalid">
@@ -73,7 +73,7 @@ const Login = () => {
                       name="password"
                       value={values.password}
                       onChange={handleChange}
-                      isInvalid={values.password && errors.password}
+                      isInvalid={errors.password}
                       isValid={values.password && !errors.password}
                     />{" "}
                     <InputGroup.Text id="inputGroupPrepend">#</InputGroup.Text>
