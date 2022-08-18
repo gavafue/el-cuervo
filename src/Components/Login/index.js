@@ -45,12 +45,12 @@ const Login = () => {
             }) => (
               <Form noValidate onSubmit={handleSubmit}>
                 <Form.Group controlId="validationFormikUsername">
-                  <Form.Label>Username</Form.Label>
+                  <Form.Label>Nombre de usuario</Form.Label>
                   <InputGroup hasValidation>
                     <InputGroup.Text id="inputGroupPrepend">@</InputGroup.Text>
                     <Form.Control
                       type="text"
-                      placeholder="Username"
+                      placeholder="Usuario"
                       aria-describedby="inputGroupPrepend"
                       name="username"
                       value={values.username}
@@ -64,11 +64,11 @@ const Login = () => {
                   </InputGroup>
                 </Form.Group>
                 <Form.Group controlId="validationFormikUsername">
-                  <Form.Label>Password</Form.Label>
+                  <Form.Label>Contraseña</Form.Label>
                   <InputGroup hasValidation>
                     <Form.Control
                       type="text"
-                      placeholder="Password"
+                      placeholder="Contraseña"
                       aria-describedby="inputGroupPrepend"
                       name="password"
                       value={values.password}
@@ -85,13 +85,13 @@ const Login = () => {
                 <Form.Group className="mb-3">
                   <Form.Check
                     name="remember"
-                    label="Agree to terms and conditions"
+                    label="Recordar"
                     onChange={handleChange}
                     feedbackType="invalid"
                     id="validationFormik0"
                   />
                 </Form.Group>
-                <Button type="submit">Submit form</Button>
+                <Button type="submit">Enviar formulario</Button>
               </Form>
             )}
           </Formik>
