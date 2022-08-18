@@ -4,25 +4,34 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import { Formik } from "formik";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import * as yup from "yup";
+import { faAt, faKey } from "@fortawesome/free-solid-svg-icons";
+import { Link, useNavigate } from "react-router-dom";
 
 const schema = yup.object().shape({
-  username: yup.string().required(),
-  password: yup.string().required(),
-  remember: yup.bool()
+  username: yup
+    .string("Solo caracteres alfanuméricos")
+    .required("Este campo es requerido"),
+  password: yup
+    .string("Solo caracteres alfanuméricos")
+    .required("Este campo es requerido"),
+  remember: yup.bool(),
 });
-
 const Login = () => {
+  const navigate = useNavigate();
+
+  const redirectTo = (linkAdress) => () => navigate(linkAdress);
   return (
     <div className="login-body">
       <Card className="login-block">
-        <Card.Header class="card-header">
-          <div class="text-center h1">
+        <Card.Header className="card-header">
+          <div className="text-center h1">
             <b>El Cuervo</b>
           </div>
         </Card.Header>
         <Card.Body>
-          <Card.Text class="text-center">
+          <Card.Text className="text-center">
             Inicia sesión para continuar
           </Card.Text>
           <Formik
@@ -47,7 +56,9 @@ const Login = () => {
                 <Form.Group controlId="validationFormikUsername">
                   <Form.Label>Nombre de usuario</Form.Label>
                   <InputGroup hasValidation>
-                    <InputGroup.Text id="inputGroupPrepend">@</InputGroup.Text>
+                    <InputGroup.Text id="inputGroupPrepend">
+                      <FontAwesomeIcon icon={faAt} />
+                    </InputGroup.Text>
                     <Form.Control
                       type="text"
                       placeholder="Usuario"
@@ -75,26 +86,39 @@ const Login = () => {
                       onChange={handleChange}
                       isInvalid={errors.password}
                       isValid={values.password && !errors.password}
-                    />{" "}
-                    <InputGroup.Text id="inputGroupPrepend">#</InputGroup.Text>
+                    />
+                    <InputGroup.Text id="inputGroupPrepend">
+                      <FontAwesomeIcon icon={faKey} />
+                    </InputGroup.Text>
                     <Form.Control.Feedback type="invalid">
                       {errors.password}
                     </Form.Control.Feedback>
                   </InputGroup>
                 </Form.Group>
-                <Form.Group className="mb-3">
-                  <Form.Check
-                    name="remember"
-                    label="Recordar"
-                    onChange={handleChange}
-                    feedbackType="invalid"
-                    id="validationFormik0"
-                  />
-                </Form.Group>
-                <Button type="submit">Enviar formulario</Button>
+                <div className="loginRow">
+                  <Form.Group className="rememberCheckbox">
+                    <Form.Check
+                      name="remember"
+                      label="Recordar"
+                      onChange={handleChange}
+                      feedbackType="invalid"
+                      id="validationFormik0"
+                    />
+                  </Form.Group>
+                  <Button onClick={redirectTo("/home")} className="loginButton" type="submit">
+                    Conectarse
+                  </Button>
+                </div>
               </Form>
             )}
           </Formik>
+
+          <p>
+            <Link to="/forgotPassword">Olvidé mi contraseña</Link>
+          </p>
+          <p>
+            <Link to="/register">Registrarse</Link>
+          </p>
         </Card.Body>
       </Card>
     </div>
