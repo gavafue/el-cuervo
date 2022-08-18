@@ -29,11 +29,11 @@ const Login = () => {
           <div className="text-center h1">
             <b>El Cuervo</b>
           </div>
-        </Card.Header>
-        <Card.Body>
           <Card.Text className="text-center">
             Inicia sesión para continuar
           </Card.Text>
+        </Card.Header>
+        <Card.Body>
           <Formik
             validationSchema={schema}
             onSubmit={console.log}
@@ -48,7 +48,7 @@ const Login = () => {
               handleChange,
               handleBlur,
               values,
-              touched,
+              dirty,
               isValid,
               errors,
             }) => (
@@ -66,7 +66,8 @@ const Login = () => {
                       name="username"
                       value={values.username}
                       onChange={handleChange}
-                      isInvalid={errors.username}
+                      onBlur={handleBlur}
+                      isInvalid={values.username && errors.username}
                       isValid={values.username && !errors.username}
                     />
                     <Form.Control.Feedback type="invalid">
@@ -84,7 +85,8 @@ const Login = () => {
                       name="password"
                       value={values.password}
                       onChange={handleChange}
-                      isInvalid={errors.password}
+                      onBlur={handleBlur}
+                      isInvalid={values.password && errors.password}
                       isValid={values.password && !errors.password}
                     />
                     <InputGroup.Text id="inputGroupPrepend">
@@ -105,7 +107,11 @@ const Login = () => {
                       id="validationFormik0"
                     />
                   </Form.Group>
-                  <Button className="loginButton" type="submit">
+                  <Button
+                    className="loginButton"
+                    disabled={!isValid || !dirty}
+                    type="submit"
+                  >
                     Conectarse
                   </Button>
                 </div>
