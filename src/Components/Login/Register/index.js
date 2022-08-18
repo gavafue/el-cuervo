@@ -1,6 +1,6 @@
 import Card from "react-bootstrap/Card";
 import "./register.css";
-import React, { useState} from "react";
+import React from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
@@ -15,7 +15,6 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 const Register = () => {
-
   const schema = yup.object().shape({
     completeName: yup
       .string()
@@ -52,7 +51,7 @@ const Register = () => {
           </div>
           <p className="text-center">Registrar nuevo usuario</p>
         </Card.Header>
-        
+
         <Card.Body>
           <Formik
             validationSchema={schema}
@@ -72,7 +71,7 @@ const Register = () => {
               values,
               isValid,
               errors,
-              dirty
+              dirty,
             }) => (
               <Form noValidate onSubmit={handleSubmit}>
                 <Form.Group controlId="validationFormik01">
