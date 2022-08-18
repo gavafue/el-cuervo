@@ -1,0 +1,23 @@
+body {
+    background-color: #e9ecef;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .login-block {
+    width: 360px;
+    vertical-align: middle;
+    display: flex;
+    border-top: 3px solid #007bff;
+  }
+  
+  .centered-button{
+    margin-top: 20px;
+    display:flex;
+    justify-content: center;
+  }
