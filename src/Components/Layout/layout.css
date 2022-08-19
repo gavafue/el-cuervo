@@ -1,6 +1,20 @@
 .topNavbar{
     top:0;
     left: 0;
-    position: fixed;
     width: 100%;
+}
+.container-topbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    position: fixed;
+    margin: 0%;
+}
+.container-children {
+    display: flex;
+    justify-content: center;
+    margin-top: 20%;
+    margin-left: 0%;
+    margin-right: 0%;
 }

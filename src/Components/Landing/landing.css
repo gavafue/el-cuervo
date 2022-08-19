@@ -1,5 +1,5 @@
 .fit-content.height{
-    height: max-content !important;
+    height: fit-content !important;
 }
 .allCentered{
     display: flex;

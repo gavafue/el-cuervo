@@ -13,7 +13,7 @@ const Layout = (props) => {
       breakpoints={["xxxl", "xxl", "xl", "lg", "md", "sm", "xs", "xxs"]}
       minBreakpoint="xxs"
     >
-      <Container className="container-fluid">
+      <Container className="container-topbar">
         {[false].map((expand) => (
           <Navbar
             key={expand}
@@ -39,17 +39,17 @@ const Layout = (props) => {
                 </Offcanvas.Header>
                 <Offcanvas.Body>
                   <Nav className="justify-content-end flex-grow-1 pe-3">
-                    <Nav.Link href="#action1">Home</Nav.Link>
+                    <Nav.Link href="/">Home</Nav.Link>
                     <Nav.Link href="#action2">Link</Nav.Link>
                     <NavDropdown
                       title="Dropdown"
                       id={`offcanvasNavbarDropdown-expand-${expand}`}
                     >
-                      <NavDropdown.Item href="#action3">
-                        Action
+                      <NavDropdown.Item href="/login">
+                        Ingresar
                       </NavDropdown.Item>
-                      <NavDropdown.Item href="#action4">
-                        Another action
+                      <NavDropdown.Item href="/register">
+                        Registrarse
                       </NavDropdown.Item>
                       <NavDropdown.Divider />
                       <NavDropdown.Item href="#action5">
@@ -62,9 +62,9 @@ const Layout = (props) => {
             </Container>
           </Navbar>
         ))}
-        <Container>
-          <Row>{props.children}</Row>
-        </Container>
+      </Container>
+      <Container className="container-children">
+        <Row>{props.children}</Row>
       </Container>
     </ThemeProvider>
   );
