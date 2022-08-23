@@ -1,24 +1,25 @@
 import Card from "react-bootstrap/Card";
 
-function BasicExample({ image, title, children }) {
+function ImgOverlay({ image, title, children, footer, height }) {
   return (
-    <Card>
+    <Card className="bg-dark text-white">
       <div
         className="cardImageStyle"
         style={{
           backgroundImage: `url(${image})`,
-          height: "200px",
+          height: `${height}`,
           backgroundPosition: "center",
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
         }}
       />
-      <Card.Body>
+      <Card.ImgOverlay>
         <Card.Title>{title}</Card.Title>
         <Card.Text>{children}</Card.Text>
-      </Card.Body>
+        <Card.Text>{footer}</Card.Text>
+      </Card.ImgOverlay>
     </Card>
   );
 }
 
-export default BasicExample;
+export default ImgOverlay;
