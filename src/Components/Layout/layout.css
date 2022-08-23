@@ -1,6 +1,5 @@
-.topNavbar{
-    top:0;
-    left: 0;
+.topNavbar {
+    height: 70px;
     width: 100%;
 }
 .container-topbar {
@@ -9,12 +8,10 @@
     align-items: center;
     justify-content: flex-start;
     position: fixed;
-    margin: 0%;
+    padding: 0px;
 }
 .container-children {
-    display: flex;
-    justify-content: center;
-    margin-top: 20%;
+    margin-top: 75px;
     margin-left: 0%;
     margin-right: 0%;
 }

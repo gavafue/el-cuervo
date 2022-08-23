@@ -1,5 +1,4 @@
 import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
@@ -9,11 +8,8 @@ import ThemeProvider from "react-bootstrap/ThemeProvider";
 
 const Layout = (props) => {
   return (
-    <ThemeProvider
-      breakpoints={["xxxl", "xxl", "xl", "lg", "md", "sm", "xs", "xxs"]}
-      minBreakpoint="xxs"
-    >
-      <Container className="container-topbar">
+    <ThemeProvider breakpoints={["xs","lg", "md", "sm"]} minBreakpoint="xs">
+      <Container fluid className="container-topbar">
         {[false].map((expand) => (
           <Navbar
             key={expand}
@@ -63,8 +59,8 @@ const Layout = (props) => {
           </Navbar>
         ))}
       </Container>
-      <Container className="container-children">
-        <Row>{props.children}</Row>
+      <Container fluid className="container-children">
+        {props.children}
       </Container>
     </ThemeProvider>
   );
