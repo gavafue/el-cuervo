@@ -1,9 +1,8 @@
-import React from "react";
 import Card from "react-bootstrap/Card";
-
-function ImageCard({ image, title, children, height }) {
+import * as React from "react";
+function ImgOverlay({ image, title, children, footer, height }) {
   return (
-    <Card>
+    <Card className="bg-dark text-white">
       <div
         className="cardImageStyle"
         style={{
@@ -14,12 +13,13 @@ function ImageCard({ image, title, children, height }) {
           backgroundRepeat: "no-repeat",
         }}
       />
-      <Card.Body>
+      <Card.ImgOverlay>
         <Card.Title>{title}</Card.Title>
         <Card.Text>{children}</Card.Text>
-      </Card.Body>
+        <Card.Text>{footer}</Card.Text>
+      </Card.ImgOverlay>
     </Card>
   );
 }
 
-export default ImageCard;
+export default ImgOverlay;
