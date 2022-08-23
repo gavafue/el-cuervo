@@ -1,7 +1,11 @@
 .login-body {
   display: flex;
   flex-direction: column;
+  height: 100%;
   align-items: center;
+  width: 100%;
+  justify-content: center;
+  position: fixed;
 }
 
 .login-block {
