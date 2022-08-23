@@ -8,7 +8,7 @@ import { Formik } from "formik";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import * as yup from "yup";
 import { faAt, faKey } from "@fortawesome/free-solid-svg-icons";
-import { Link /*useNavigate*/ } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const schema = yup.object().shape({
   username: yup
@@ -20,9 +20,13 @@ const schema = yup.object().shape({
   remember: yup.bool(),
 });
 const Login = () => {
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
-  // const redirectTo = (linkAdress) => () => navigate(linkAdress);
+  const onSubmit = (e) => {
+    console.log(e);
+    navigate("/home");
+  };
+
   return (
     <div className="login-body">
       <Card className="login-block">
@@ -37,7 +41,7 @@ const Login = () => {
         <Card.Body>
           <Formik
             validationSchema={schema}
-            onSubmit={console.log}
+            onSubmit={onSubmit}
             initialValues={{
               username: "",
               password: "",
