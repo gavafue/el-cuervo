@@ -1,3 +1,4 @@
+import React from "react";
 import Layout from "Components/Layout";
 import "./landing.css";
 import Container from "react-bootstrap/Container";
@@ -41,21 +42,21 @@ const Landing = () => {
         </Row>
         <Row>
           <Col className="col-layout" xs={12} sm={4}>
-            <ImageCard title="Pasión" image="/assets/landing1.png">
+            <ImageCard height="200px" title="Pasión" image="/assets/landing1.png">
               Lorem Ipsum es simplemente el texto de relleno de las imprentas y
               archivos de texto. Lorem Ipsum ha sido el texto de relleno
               estándar de las industrias desde el año 1500,
             </ImageCard>
           </Col>
           <Col className="col-layout" xs={12} sm={4}>
-            <ImageCard title="Excelencia" image="/assets/landing2.jpg">
+            <ImageCard height="200px" title="Excelencia" image="/assets/landing2.jpg">
               Lorem Ipsum es simplemente el texto de relleno de las imprentas y
               archivos de texto. Lorem Ipsum ha sido el texto de relleno
               estándar de las industrias desde el año 1500,
             </ImageCard>
           </Col>
           <Col className="col-layout" xs={12} sm={4}>
-            <ImageCard title="Vocación" image="/assets/landing3.jpg">
+            <ImageCard height="200px" title="Vocación" image="/assets/landing3.jpg">
               Lorem Ipsum es simplemente el texto de relleno de las imprentas y
               archivos de texto. Lorem Ipsum ha sido el texto de relleno
               estándar de las industrias desde el año 1500,
@@ -66,7 +67,7 @@ const Landing = () => {
       <Container>
         <Row>
           <Col>
-            <ImageCard title="Profesionalismo" image="/assets/landing3.jpg">
+            <ImageCard height="200px" title="Profesionalismo" image="/assets/landing3.jpg">
               Lorem Ipsum es simplemente el texto de relleno de las imprentas y
               archivos de texto. Lorem Ipsum ha sido el texto de relleno
               estándar de las industrias desde el año 1500,

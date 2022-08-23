@@ -1,13 +1,14 @@
+import React from "react";
 import Card from "react-bootstrap/Card";
 
-function BasicExample({ image, title, children }) {
+function ImageCard({ image, title, children, height }) {
   return (
     <Card>
       <div
         className="cardImageStyle"
         style={{
           backgroundImage: `url(${image})`,
-          height: "200px",
+          height: `${height}`,
           backgroundPosition: "center",
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
@@ -21,4 +22,4 @@ function BasicExample({ image, title, children }) {
   );
 }
 
-export default BasicExample;
+export default ImageCard;
