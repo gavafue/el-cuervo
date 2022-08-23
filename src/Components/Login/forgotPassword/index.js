@@ -1,3 +1,4 @@
+import React from "react";
 import Card from "react-bootstrap/Card";
 import "./forgotPassword.css";
 import Button from "react-bootstrap/Button";

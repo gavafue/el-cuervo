@@ -1,3 +1,4 @@
+import React from "react";
 import Layout from "Components/Layout";
 import "./landing.css";
 import Container from "react-bootstrap/Container";
