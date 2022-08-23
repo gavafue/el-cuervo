@@ -13,7 +13,8 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import Link from "@mui/material/Link";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { ThemeProvider } from "@mui/material/styles";
+import AppTheme from "Components/Theme";
 
 const Copyright = () => {
   return (
@@ -30,7 +31,7 @@ const Copyright = () => {
 
 const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-const theme = createTheme();
+const theme = AppTheme;
 
 const Barbers = () => {
   return (
@@ -40,12 +41,11 @@ const Barbers = () => {
         <Toolbar>
           <CameraIcon sx={{ mr: 2 }} />
           <Typography variant="h6" color="inherit" noWrap>
-            Album layout
+            ¿Quiénes somos?
           </Typography>
         </Toolbar>
       </AppBar>
       <main>
-        {/* Hero unit */}
         <Box
           sx={{
             bgcolor: "background.paper",
@@ -71,19 +71,9 @@ const Barbers = () => {
             >
               Conoce nuestro trabajo para ver cuál se adapta mejor a ti.
             </Typography>
-            {/* <Stack
-              sx={{ pt: 4 }}
-              direction="row"
-              spacing={2}
-              justifyContent="center"
-            >
-              <Button variant="contained">Main call to action</Button>
-              <Button variant="outlined">Secondary action</Button>
-            </Stack> */}
           </Container>
         </Box>
         <Container sx={{ py: 4 }} maxWidth="lg">
-          {/* End hero unit */}
           <Grid container spacing={8}>
             {cards.map((card) => (
               <Grid item key={card} xs={12} sm={6} md={3}>
@@ -105,16 +95,14 @@ const Barbers = () => {
                   />
                   <CardContent sx={{ flexGrow: 1 }}>
                     <Typography gutterBottom variant="h5" component="h2">
-                      Heading
+                      Nombre
                     </Typography>
                     <Typography>
-                      This is a media card. You can use this section to describe
-                      the content.
+                      Descripción, especialidad, estilos, etc.
                     </Typography>
                   </CardContent>
                   <CardActions>
-                    <Button size="small">Conocer más</Button>
-                    {/* <Button size="small">Edit</Button> */}
+                    <Button size="small" href="/profile">Conocer más</Button>
                   </CardActions>
                 </Card>
               </Grid>

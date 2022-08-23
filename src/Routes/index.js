@@ -5,6 +5,7 @@ import ForgotPassword from "Components/Login/forgotPassword";
 import Register from "Components/Login/Register";
 import Landing from "Components/Landing";
 import Barbers from "Components/Barbers";
+import ProfileHeader from "Components/Barbers/profile";
 
 const IndexRoutes = () => {
   return (
@@ -14,6 +15,7 @@ const IndexRoutes = () => {
       <Route path="/forgotPassword" element={<ForgotPassword />} />
       <Route path="/register" element={<Register />} />
       <Route path="/barbers" element={<Barbers />} />
+      <Route path="/profile" element={<ProfileHeader />} />
     </Routes>
   );
 };
