@@ -1,5 +1,5 @@
 import Card from "react-bootstrap/Card";
-
+import * as React from "react";
 function ImgOverlay({ image, title, children, footer, height }) {
   return (
     <Card className="bg-dark text-white">

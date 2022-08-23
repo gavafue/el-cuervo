@@ -1,4 +1,5 @@
 import Card from 'react-bootstrap/Card';
+import * as React from "react";
 
 function CardOnlyText({ title, subtitle, children, footer }) {
   return (

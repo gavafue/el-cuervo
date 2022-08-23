@@ -1,5 +1,5 @@
 import Card from "react-bootstrap/Card";
-
+import * as React from "react";
 function BgColorExample() {
   return (
     <Card bg="dark" text="white" className="mb-2">
