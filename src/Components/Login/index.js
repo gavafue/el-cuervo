@@ -11,8 +11,9 @@ import { faAt, faKey } from "@fortawesome/free-solid-svg-icons";
 import { Link, useNavigate } from "react-router-dom";
 
 const schema = yup.object().shape({
-  username: yup
-    .string("Solo caracteres alfanuméricos")
+  email: yup
+    .string()
+    .email("Debe de ser un formato de mail valido")
     .required("Este campo es requerido"),
   password: yup
     .string("Solo caracteres alfanuméricos")
@@ -43,7 +44,7 @@ const Login = () => {
             validationSchema={schema}
             onSubmit={onSubmit}
             initialValues={{
-              username: "",
+              email: "",
               password: "",
               remember: false,
             }}
@@ -58,29 +59,29 @@ const Login = () => {
               errors,
             }) => (
               <Form noValidate onSubmit={handleSubmit}>
-                <Form.Group controlId="validationFormikUsername">
-                  <Form.Label>Nombre de usuario</Form.Label>
+                <Form.Group controlId="validationFormikemail">
+                  <Form.Label>Correo electrónico</Form.Label>
                   <InputGroup hasValidation>
                     <InputGroup.Text id="inputGroupPrepend">
                       <FontAwesomeIcon icon={faAt} />
                     </InputGroup.Text>
                     <Form.Control
-                      type="text"
-                      placeholder="Usuario"
+                      type="email"
+                      placeholder="E-mail"
                       aria-describedby="inputGroupPrepend"
-                      name="username"
-                      value={values.username}
+                      name="email"
+                      value={values.email}
                       onChange={handleChange}
                       onBlur={handleBlur}
-                      isInvalid={values.username && errors.username}
-                      isValid={values.username && !errors.username}
+                      isInvalid={values.email && errors.email}
+                      isValid={values.email && !errors.email}
                     />
                     <Form.Control.Feedback type="invalid">
-                      {errors.username}
+                      {errors.email}
                     </Form.Control.Feedback>
                   </InputGroup>
                 </Form.Group>
-                <Form.Group controlId="validationFormikUsername">
+                <Form.Group controlId="validationFormikpassword">
                   <Form.Label>Contraseña</Form.Label>
                   <InputGroup hasValidation>
                     <Form.Control

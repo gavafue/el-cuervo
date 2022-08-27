@@ -7,12 +7,7 @@ import InputGroup from "react-bootstrap/InputGroup";
 import { Formik } from "formik";
 import * as yup from "yup";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faAt,
-  faCircleUser,
-  faIdCard,
-  faLock,
-} from "@fortawesome/free-solid-svg-icons";
+import { faAt, faCircleUser, faLock } from "@fortawesome/free-solid-svg-icons";
 
 const Register = () => {
   const schema = yup.object().shape({
@@ -21,7 +16,6 @@ const Register = () => {
       .min(7, "Ingrese minimo 7 caracteres")
       .matches(/[a-zA-Z]+ [a-zA-Z]+/i, "Solo letras y al menos un espacio")
       .required("Nombre es un campo requerido"),
-    username: yup.string().required("Usuario es un campo requerido"),
     email: yup
       .string()
       .email("Debe ingresar un e-mail válido")
@@ -91,28 +85,6 @@ const Register = () => {
                     </InputGroup.Text>
                     <Form.Control.Feedback type="invalid">
                       {errors.completeName}
-                    </Form.Control.Feedback>
-                  </InputGroup>
-                </Form.Group>
-
-                <Form.Group controlId="validationFormikUsername">
-                  <Form.Label>Username</Form.Label>
-                  <InputGroup hasValidation>
-                    <Form.Control
-                      type="text"
-                      placeholder="Username"
-                      aria-describedby="inputGroupPrepend"
-                      name="username"
-                      value={values.username}
-                      onChange={handleChange}
-                      isValid={values.username && !errors.username}
-                      isInvalid={values.username && errors.username}
-                    />
-                    <InputGroup.Text id="inputGroupPrepend">
-                      <FontAwesomeIcon icon={faIdCard} />
-                    </InputGroup.Text>
-                    <Form.Control.Feedback type="invalid">
-                      {errors.username}
                     </Form.Control.Feedback>
                   </InputGroup>
                 </Form.Group>
